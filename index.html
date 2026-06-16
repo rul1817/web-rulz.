@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp Support</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#25D366,#128C7E);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+.box{
+width:360px;
+background:#fff;
+padding:25px;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+h2{text-align:center;}
+input,button{
+width:100%;
+padding:13px;
+margin-top:12px;
+border-radius:10px;
+border:1px solid #ddd;
+box-sizing:border-box;
+}
+button{
+background:#25D366;
+color:#fff;
+border:none;
+font-weight:bold;
+cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+<h2>NEW MT FIX MERAH 🔴</h2>
+
+<input id="nomor" placeholder="+628xxxxxxxxxx">
+<input id="email" type="email" placeholder="Email Anda">
+
+<button onclick="kirim()">Buka Email</button>
+
+</div>
+
+<script>
+function kirim(){
+
+let nomor=document.getElementById("nomor").value;
+
+let subject="Login tidak tersedia";
+
+let body=`Kepada Tim WhatsApp,
+
+Saya mengalami kendala saat mendaftar nomor saya di WhatsApp.
+Muncul pesan: "Login tidak tersedia" / "No valid account" padahal ini nomor pribadi saya yang aktif.
+
+Mohon bantuannya untuk ditinjau agar nomor saya bisa digunakan kembali.
+
+Nomor: ${nomor}
+
+Terima kasih.`;
+
+window.location.href=
+`mailto:support@support.whatsapp.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+}
+</script>
+
+</body>
+</html>
